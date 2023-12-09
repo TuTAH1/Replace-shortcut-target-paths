@@ -1,0 +1,73 @@
+﻿<Window x:Class="Change_Shortcuts_paths.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:Change_Shortcuts_paths"
+		mc:Ignorable="d"
+		Title="Shortcuts Paths Replacer" SizeToContent="WidthAndHeight" Icon="/Shortcut Path replacer.ico">
+	<Grid VerticalAlignment="Top">
+		<StackPanel Margin="10">
+            <StackPanel x:Name="spSourceFolder" Orientation="Vertical"
+						>
+                <!-- Folder Path-->
+				<TextBlock x:Name="lbSourceFolder"  Text="Folder" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12"/>
+                <Grid x:Name="spSourceFolderPath" Background="Transparent"
+                      MouseMove="SourceFolder_MouseMove"
+                      AllowDrop="True"
+                      DragEnter="SourceFolder_DragEnter"
+                      DragLeave="SourceFolder_DragLeave"
+                      DragOver="SourceFolder_DragOver" Drop="SourceFolder_Drop" 
+                      >
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition />
+						<ColumnDefinition Width="auto"/>
+					</Grid.ColumnDefinitions>
+                    <TextBox x:Name="tbSourceFolderPath" Grid.Column="0" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Stretch" Padding="5" AllowDrop="True"/>
+					<Button x:Name="btnSourceFolderPath" Grid.Column="1" Margin="5 0 0 0" Click="BtnSourceFolderPath_OnClick" VerticalAlignment="Stretch" HorizontalAlignment="Right">Browse...</Button>
+				</Grid>
+				<TextBlock x:Name="lbSourceFolderDescription" Text="Folder where shortcuts will be replaced" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Gray" FontSize="10"/>
+
+				<CheckBox x:Name="cbSubfolders" IsChecked="True">Include subfolders</CheckBox>
+
+                <CheckBox x:Name="cbSkipValid" IsChecked="True">Skip valid</CheckBox>
+                <TextBlock x:Name="lbSkipValidDescription" Text="Skip shortcuts targeting to existing file" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Gray" FontSize="10"/>
+
+                <CheckBox x:Name="cbCancelInvalid" IsChecked="True">Cancel if invalid</CheckBox>
+                <TextBlock x:Name="lbSkipInvalidDescription" Text="Cancels replace if replaced target not exist" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Gray" FontSize="10"/>
+
+
+                <CheckBox x:Name="cbRegular" IsChecked="False">Regular expressions</CheckBox>
+
+                <CheckBox x:Name="cbLog" IsChecked="False">Log</CheckBox>
+                <TextBlock x:Name="lbLogDescription" Text="Write a log into a file" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Gray" FontSize="10"/>
+
+                <CheckBox x:Name="cbWorkingDirectory" IsChecked="False" Checked="CbWorkingDirectory_CheckChanged" Unchecked="CbWorkingDirectory_CheckChanged">Replace working directory</CheckBox>
+                <TextBlock x:Name="lhWorkingDirectoryDescription" Text="Replace working directory path same way as target path" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Gray" FontSize="10"/>
+
+					<CheckBox x:Name="cbWorkingDirectory_OnlyWithShortcut" IsChecked="True" IsEnabled="False" IsEnabledChanged="CbWorkingDirectory_OnlyWithShortcut_OnIsEnabledChanged" Margin="10 0 0 0" >Only with shortcut path</CheckBox>
+                <TextBlock x:Name="lbWorkingDirectory_OnlyWithShortcutDescription" Text="Replace working directory path only if shortcut target was replaced" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Gainsboro" FontSize="10" Margin="10 0 0 0"/>
+
+
+
+
+            </StackPanel>
+
+			<StackPanel x:Name="spFind" Orientation="Vertical" Margin="0 5 0 0">
+				<!-- Find -->
+				<TextBlock x:Name="lbFind"  Text="Find" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12"/>
+				<TextBox x:Name="tbFind" HorizontalAlignment="Left" Height="auto" TextWrapping="Wrap" Text="" MinWidth="203"  Padding="5"/>
+				<TextBlock x:Name="lbFindDescription" Text="Text in shortcut paths that will be replaced" HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="Gray" FontSize="10"/>
+			</StackPanel>
+
+		   <StackPanel x:Name="spReplace" Orientation="Vertical" Margin="0 5 0 0">
+				<!-- Replace -->
+				<TextBlock x:Name="lbReplace"  Text="Replace" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12"/>
+				<TextBox x:Name="tbReplace" HorizontalAlignment="Left" Height="auto" TextWrapping="Wrap" Text="" VerticalAlignment="Top" MinWidth="203" Padding="5"/>
+				<TextBlock x:Name="lbReplaceDescription" Text="Text that will replace the text in shortcut paths" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Gray" FontSize="10"/>
+            </StackPanel>
+
+			<Button x:Name="btnReplace" Content="Replace" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0 10 0 0" Click="btnReplace_Click"/>
+		</StackPanel>
+	</Grid>
+</Window>

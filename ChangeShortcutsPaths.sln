@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChangeShortcutsPaths", "ChangeShortcutsPaths.csproj", "{1256EBBD-D1FD-4DC3-9C26-B0EAB13D45CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1256EBBD-D1FD-4DC3-9C26-B0EAB13D45CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1256EBBD-D1FD-4DC3-9C26-B0EAB13D45CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1256EBBD-D1FD-4DC3-9C26-B0EAB13D45CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1256EBBD-D1FD-4DC3-9C26-B0EAB13D45CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {11EDFA37-BE62-4E98-AE3D-72ADA0ABC5F9}
+	EndGlobalSection
+EndGlobal
